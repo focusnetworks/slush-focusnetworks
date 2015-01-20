@@ -1,0 +1,523 @@
+/* ==========================================================================
+   CSS Customizado.
+   ========================================================================== */
+.navbar{
+
+}
+
+.navbar .container{
+    
+}
+
+.navbar .navbar-header{
+    margin-top: 15px;
+}
+
+#navbar{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar-brand img{
+    width: 50%;
+    margin-top: -15px;
+}
+
+.top-nav-collapse .navbar-brand img{
+    width: 120px;
+    margin-top: -10px;
+    -webkit-transition:width 50ms ease-in-out, height 50ms ease-in-out;
+    -moz-transition:width 50ms ease-in-out, height 50ms ease-in-out;
+    -o-transition:width 50ms ease-in-out, height 50ms ease-in-out;
+    transition:width 50ms ease-in-out, height 50ms ease-in-out;
+}
+
+a:hover{
+    opacity: 0.8;
+    text-decoration: none;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+
+/* ==========================================================================
+   CSS Mediabox.
+   ========================================================================== */
+
+.mediabox{
+    background: url("../img/bg_topo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 969px;
+}
+
+.title-box{
+    margin-top: 320px;
+    font-family: 'freightsans_probook_italic';
+    color:  #ffffff;
+    font-size: 36px; /* Aproximação devido à substituição de fonte */
+    font-style: italic;
+    line-height: 36px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+    font-weight: normal;
+}
+
+.subtitle-box{
+    font-family: 'freightsans_probook';
+    color:  #ffffff;
+    font-size: 56px; /* Aproximação devido à substituição de fonte */
+    font-weight: 400;
+    line-height: 46px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+    margin-top: 40px;
+}
+
+.subtitle-box-2{
+    margin-top: 40px;
+    font-family: 'freightsans_probook_italic';
+    color:  #ffffff;
+    font-size: 36px; /* Aproximação devido à substituição de fonte */
+    font-style: italic;
+    line-height: 36px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+    font-weight: normal;
+}
+
+.mediabox .angle-double{
+    text-align: center;
+}
+
+.mediabox .fa-angle-double-down{
+    color: white;
+    font-size: 4em;
+    margin-top: 260px;
+}
+
+
+/* ==========================================================================
+   CSS About.
+   ========================================================================== */
+
+#about{
+    padding-bottom: 50px;
+}
+
+#about .header{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#about h1{
+    font-family: 'freightsans_prosemibold';
+    color:  #455560;
+    font-size: 40px; /* Aproximação devido à substituição de fonte */
+    font-weight: 400;
+    line-height: 50px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+    font-weight: bold;
+}
+
+#about .about-p{
+    font-family: 'freightsans_probook_italic';
+    color:  #777777;
+    font-size: 28px; /* Aproximação devido à substituição de fonte */
+    
+    line-height: 30px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+}
+
+.about-item{
+    text-align: center;
+}
+
+.about-item h2{
+    font-family: 'freightsans_probook';
+    color:  #71bf44;
+    font-size: 26px;
+    text-align: center;
+}
+
+.about-item p{
+    font-family: 'freightsans_probook';
+    color:  #999999;
+    font-size: 18px;
+}
+
+
+/* ==========================================================================
+   CSS Clients.
+   ========================================================================== */
+
+#clients{
+    height: auto;
+    background-color:  #f9f9f9;
+    padding-bottom: 20px;
+}
+
+#clients h1{
+    font-family: 'freightsans_probook_italic';
+    color:  #455560;
+    font-size: 21px; /* Aproximação devido à substituição de fonte */
+    font-style: italic;
+    line-height: 16px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+    margin-top: 50px;
+}
+
+#clients h1 span{
+    color:  #67c036;
+    font-weight: bold;
+}
+
+#clients .logos{
+    margin: 20px auto;
+    text-align: center;
+}
+
+#clients .logos div{
+    margin-top: 20px;
+}
+
+
+/* ==========================================================================
+   CSS testimonials.
+   ========================================================================== */
+
+#testimonials{
+    padding-bottom: 50px;
+}
+
+#testimonials h1{
+    font-family: 'freightsans_prosemibold';
+    color:  #455560;
+    font-size: 40px; /* Aproximação devido à substituição de fonte */
+    font-weight: 400;
+    line-height: 50px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+#testimonials .header p{
+    font-family: 'freightsans_probook_italic';
+    color:  #777777;
+    font-size: 26px; /* Aproximação devido à substituição de fonte */
+    font-style: italic;
+    line-height: 30px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#testimonials .person{
+    margin-top: 20px;
+}
+
+
+#testimonials .person p span{
+    font-family: 'freightsans_probook';
+    color:  #71bf44;
+    text-align: center;
+    font-size: 16px
+}
+
+#testimonials .person p{
+    font-family: 'freightsans_probook';
+    color:  #999999;
+    text-align: center;
+    font-size: 16px;
+    line-height: 10px;
+}
+
+/* ==========================================================================
+   CSS products.
+   ========================================================================== */
+
+#products{
+
+}
+
+#products .cartoes, #products .contabil{
+    padding: 60px;
+}
+
+#products .cartoes{
+    background-color: #2269b2;
+    padding-left: 90px;
+    
+}
+
+#products .contabil{
+    padding-right: 90px;
+    background-color: #1fa08f;
+}
+
+#products .title{
+    font-family: 'freightsans_probook';
+    color:  #ffffff;
+    font-size: 18px; /* Aproximação devido à substituição de fonte */
+    text-align: left;
+    font-weight: normal;
+    margin-top: 45px;
+}
+
+#products .service{
+    margin-left: 5px;
+    margin-bottom: 30px;
+}
+
+#products .service h2{
+    font-family: 'freightsans_probook';
+    color:  #ffffff;
+    font-size: 21px; /* Aproximação devido à substituição de fonte */
+    line-height: 29px; /* Aproximação devido à substituição de fonte */
+}
+
+#products .service ul{
+    list-style: none;
+}
+
+#products .service ul li{
+    font-family: 'freightsans_probook';
+    color:  #ffffff;
+    font-size: 18px; /* Aproximação devido à substituição de fonte */
+    text-align: left;
+}
+
+#products .service ul li i{
+    margin-right: 10px;
+    color: white;
+}
+
+#products .service .fancy-line{
+    width: 390px;
+    height: 4px;
+}
+
+#products .btn-entre-contato i{
+    margin-right: 10px;
+}
+
+#products .btn-entre-contato{
+    font-family: 'freightsans_probook';
+    border-radius: 21px;
+    background-color:  #ffffff;
+    width: 201px;
+    height: 42px;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+#products .btn-entre-contato:hover{
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   CSS API.
+   ========================================================================== */
+
+#api{
+    background-color:  #f9f9f9;
+    padding-bottom: 70px;
+}
+
+#api .subtitle{
+    font-family: 'freightsans_probook';
+    color:  #777777;
+    font-size: 26px; /* Aproximação devido à substituição de fonte */
+    font-style: italic;
+    line-height: 30px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#api .subtitle span{
+    font-weight: bold;
+}
+
+#api h1{
+    font-family: 'freightsans_prosemibold';
+    color:  #455560;
+    font-size: 40px; /* Aproximação devido à substituição de fonte */
+    line-height: 50px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+#api .benefits-business{
+
+}
+
+#api .benefits{
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color:  #ffffff;
+    box-shadow: 1px 3px 2px 0.00px rgba(0, 1, 1, 0.1);
+    height: 410px;
+    padding: 40px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#api .benefits h2{
+    font-family: 'freightsans_probook';
+    color:  #71bf44;
+    font-size: 26px; /* Aproximação devido à substituição de fonte */
+    font-weight: 400;
+    line-height: 29px; /* Aproximação devido à substituição de fonte */
+    text-align: center;
+}
+
+#api .benefits p{
+    font-family: 'freightsans_probook';
+    color:  #999999;
+    font-size: 18px; /* Aproximação devido à substituição de fonte */
+    font-weight: 400;
+    text-align: center;
+}
+
+#api .benefits a{
+    color: #0072bc;
+    width: 150px;
+    border-radius: 10px;
+    border: 2px solid #0072bc;
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+footer{
+    padding-top: 40px;
+    text-align: center;
+}
+
+footer p{
+    font-family: 'freightsans_probook';
+    color:  #999999;
+    font-size: 18px;
+}
+
+.logo-footer{
+    margin-bottom: 20px;
+}
+
+.social a{
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+.socials{
+    width: 32px;
+    height: 32px;
+    background: url('../img/socials.png');
+    float: left;
+    margin-right: 10px;
+}
+
+.facebook{
+    
+}
+
+.twitter{
+    background-position: -44px 0px;
+}
+
+.linkedin{
+    background-position: -89px 0px;
+}
+
+.youtube{
+    background-position: -134px 0px;
+}
+
+@media screen and (min-width: 768px) {
+
+    #clients{
+        height: 244px;
+    }
+
+    #clients .logos{
+        margin: 60px auto;
+        text-align: center;
+    }
+
+    #clients .logos div{
+        margin-top: 0px;
+    }
+
+    .mediabox{
+        margin-top: 60px;
+    }
+
+    .navbar-brand img{
+        width: 100%;
+    }
+
+    .navbar-nav li a{
+        font-family: 'freightsans_probook';
+        font-size: 18px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .navbar-nav li{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .navbar-nav li.active>a{
+        background: none !important;
+        color: #0072bc !important;
+        border-bottom: solid 2px #0072bc;
+        padding-bottom: 3px;
+    }
+
+    .title-box{
+        line-height: 36px; /* Aproximação devido à substituição de fonte */
+    }
+
+    .subtitle-box-2{
+        line-height: 36px; /* Aproximação devido à substituição de fonte */
+    }
+
+    .subtitle-box{
+        line-height: 29px; /* Aproximação devido à substituição de fonte */
+    }
+
+    #api .benefits{
+        border-radius: 10px;
+        background-color:  #ffffff;
+        box-shadow: 1px 3px 2px 0.00px rgba(0, 1, 1, 0.1);
+        height: 400px;
+        width: 500px;
+        float: left;
+    }
+
+    #api .benefits-developer{
+        margin-left: 140px;
+    }
+
+    #api .benefits a{
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .social{
+
+    }
+
+
+}
