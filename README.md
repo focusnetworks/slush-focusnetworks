@@ -1,14 +1,14 @@
 # reloader [![Build Status](https://secure.travis-ci.org/arvindr21/slush-reloader.png?branch=master)](https://travis-ci.org/arvindr21/slush-reloader) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-reloader.png)](http://badges.enytc.com/for/npm/slush-reloader)
 
-> A slush generator to scaffold a auto reloading static webpage project
+> A slush generator to scaffold webpage projects Focusnetworks
 
 
 ## Getting Started
 
-Install `slush-reloader` globally:
+Install `slush-focusnetworks` globally:
 
 ```bash
-$ npm install -g slush-reloader
+$ npm install -g slush-focusnetworks
 ```
 
 ### Usage
@@ -16,13 +16,13 @@ $ npm install -g slush-reloader
 Create a new folder for your project:
 
 ```bash
-$ mkdir my-slush-reloader
+$ mkdir my-project
 ```
 
 Run the generator from within the new folder:
 
 ```bash
-$ cd my-slush-reloader && slush reloader
+$ cd my-slush-reloader && slush focusnetworks
 ```
 
 ## Getting To Know Slush
@@ -35,16 +35,16 @@ To find out more about Slush, check out the [documentation](https://github.com/k
 
 ## Contributing
 
-See the [CONTRIBUTING Guidelines](https://github.com/arvindr21/slush-reloader/blob/master/CONTRIBUTING.md)
+See the [CONTRIBUTING Guidelines](https://github.com/focusnetworks/slush-focusnetworks/blob/master/CONTRIBUTING.md)
 
 ## Support
-If you have any problem or suggestion please open an issue [here](https://github.com/arvindr21/slush-reloader/issues).
+If you have any problem or suggestion please open an issue [here](https://github.com/focusnetworks/slush-focusnetworks/issues).
 
 ## License 
 
 The MIT License
 
-Copyright (c) 2014, Arvind Ravulavaru
+Copyright (c) 2015, Focusnetworks
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -67,3 +67,6 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
+=======
+# focusnetworks-slush-html
+A slush generator to scaffold static webpage project
