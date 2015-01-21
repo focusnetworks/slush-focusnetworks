@@ -1,4 +1,4 @@
-# slush-focusnetworks [![Build Status](https://secure.travis-ci.org/focusnetworks/slush-focusnetworks.png?branch=master)](https://travis-ci.org/focusnetworks/slush-focusnetworks) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-reloader.png)](http://badges.enytc.com/for/npm/slush-reloader)
+# slush-focusnetworks [![Build Status](https://secure.travis-ci.org/focusnetworks/slush-focusnetworks.png?branch=master)](https://travis-ci.org/focusnetworks/slush-focusnetworks) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-focusnetworks.png)](http://badges.enytc.com/for/npm/slush-focusnetworks)
 
 > A slush generator to scaffold webpage projects Focusnetworks
 
