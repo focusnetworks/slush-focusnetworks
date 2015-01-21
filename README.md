@@ -1,6 +1,9 @@
-# reloader [![Build Status](https://secure.travis-ci.org/arvindr21/slush-reloader.png?branch=master)](https://travis-ci.org/arvindr21/slush-reloader) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-reloader.png)](http://badges.enytc.com/for/npm/slush-reloader)
+# slush-focusnetworks [![Build Status](https://secure.travis-ci.org/focusnetworks/slush-focusnetworks.png?branch=master)](https://travis-ci.org/focusnetworks/slush-focusnetworks) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-reloader.png)](http://badges.enytc.com/for/npm/slush-reloader)
 
 > A slush generator to scaffold webpage projects Focusnetworks
+
+## Dependencies 
+You need install [NPM](http://www.npmjs.com/), [Gulp](http://gulpjs.com/) and [Slush](http://slushjs.github.io/#/)
 
 
 ## Getting Started
@@ -68,5 +71,5 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 =======
-# focusnetworks-slush-html
-A slush generator to scaffold static webpage project
+# slush-focusnetworks
+A slush generator to scaffold webpage projects Focusnetworks

@@ -8,13 +8,13 @@
 
 'use strict';
 
-var gulp = require('gulp'),
-    install = require('gulp-install'),
-    conflict = require('gulp-conflict'),
-    template = require('gulp-template'),
-    rename = require('gulp-rename'),
-    _ = require('underscore.string'),
-    inquirer = require('inquirer');
+var gulp        = require('gulp'),
+    install     = require('gulp-install'),
+    conflict    = require('gulp-conflict'),
+    template    = require('gulp-template'),
+    rename      = require('gulp-rename'),
+    _           = require('underscore.string'),
+    inquirer    = require('inquirer');
 
 function format(string) {
     var username = string.toLowerCase();
@@ -22,11 +22,11 @@ function format(string) {
 }
 
 var defaults = (function() {
-    var homeDir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE,
-        workingDirName = process.cwd().split('/').pop().split('\\').pop(),
-        osUserName = homeDir && homeDir.split('/').pop() || 'root',
-        configFile = homeDir + '/.gitconfig',
-        user = {};
+    var homeDir         = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE,
+        workingDirName  = process.cwd().split('/').pop().split('\\').pop(),
+        osUserName      = homeDir && homeDir.split('/').pop() || 'root',
+        configFile      = homeDir + '/.gitconfig',
+        user            = {};
     if (require('fs').existsSync(configFile)) {
         user = require('iniparser').parseSync(configFile).user;
     }
@@ -37,16 +37,36 @@ var defaults = (function() {
     };
 })();
 
-gulp.task('default', function(done) {
-    var prompts = [{
-        name: 'appName',
-        message: 'Qual o nome do projeto?',
-        default: defaults.appName
-    }];
-    inquirer.prompt(prompts,
-        function(answers) {
-            answers.appNameSlug = _.slugify(answers.appName);
-            gulp.src(__dirname + '/templates/**')
+
+gulp.task('default', function (done) {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'appName',
+            message: 'Qual o nome do projeto?',
+            default: defaults.appName
+        },
+        {
+            type: 'list',
+            name: 'typeProject',
+            message: 'Qual linguagem?',
+            choices: ['HTML', 'Rails', 'cakePHP', 'MEAN', 'AngularJS'],
+            default: 'HTML'
+        },
+        {
+            type: 'confirm',
+            name: 'moveon',
+            message: 'Gerar scaffolding?'
+        }
+    ],
+    function (answers) {
+        answers.appNameSlug = _.slugify(answers.appName);
+        if (!answers.moveon) {
+            return done();
+        }
+        if (answers.typeProject == 'HTML') {
+            console.log("HTML");
+            gulp.src(__dirname + '/templates/html/**')
                 .pipe(template(answers))
                 .pipe(rename(function(file) {
                     if (file.basename[0] === '_') {
@@ -56,8 +76,69 @@ gulp.task('default', function(done) {
                 .pipe(conflict('./'))
                 .pipe(gulp.dest('./'))
                 .pipe(install())
-                .on('end', function() {
+                .on('finish', function () {
                     done();
-                });
-        });
+            });
+        }
+        if (answers.typeProject == 'Rails') {
+            gulp.src(__dirname + '/templates/rails/**')
+            .pipe(template(answers))
+            .pipe(rename(function(file) {
+                if (file.basename[0] === '_') {
+                    file.basename = '.' + file.basename.slice(1);
+                }
+            }))
+            .pipe(conflict('./'))
+            .pipe(gulp.dest('./'))
+            .pipe(install())
+                .on('finish', function () {
+            done();
+            });
+        }
+        if (answers.typeProject == 'cakePHP') {
+            gulp.src(__dirname + '/templates/cakePHP/**')
+            .pipe(template(answers))
+            .pipe(rename(function(file) {
+                if (file.basename[0] === '_') {
+                    file.basename = '.' + file.basename.slice(1);
+                }
+            }))
+            .pipe(conflict('./'))
+            .pipe(gulp.dest('./'))
+            .pipe(install())
+                .on('finish', function () {
+            done();
+            });
+        }
+        if (answers.typeProject == 'MEAN') {
+            gulp.src(__dirname + '/templates/MEAN/**')
+            .pipe(template(answers))
+            .pipe(rename(function(file) {
+                if (file.basename[0] === '_') {
+                    file.basename = '.' + file.basename.slice(1);
+                }
+            }))
+            .pipe(conflict('./'))
+            .pipe(gulp.dest('./'))
+            .pipe(install())
+                .on('finish', function () {
+            done();
+            });
+        }
+        if (answers.typeProject == 'AngularJS') {
+            gulp.src(__dirname + '/templates/angularJS/**')
+            .pipe(template(answers))
+            .pipe(rename(function(file) {
+                if (file.basename[0] === '_') {
+                    file.basename = '.' + file.basename.slice(1);
+                }
+            }))
+            .pipe(conflict('./'))
+            .pipe(gulp.dest('./'))
+            .pipe(install())
+                .on('finish', function () {
+            done();
+            });
+        }
+    });
 });

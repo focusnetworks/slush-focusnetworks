@@ -1,14 +1,6 @@
 /* ==========================================================================
    CSS Customizado.
    ========================================================================== */
-.navbar{
-
-}
-
-.navbar .container{
-    
-}
-
 .navbar .navbar-header{
     margin-top: 15px;
 }
@@ -24,7 +16,6 @@
 }
 
 .top-nav-collapse .navbar-brand img{
-    width: 120px;
     margin-top: -10px;
     -webkit-transition:width 50ms ease-in-out, height 50ms ease-in-out;
     -moz-transition:width 50ms ease-in-out, height 50ms ease-in-out;
