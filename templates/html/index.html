@@ -2,8 +2,8 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-<html class="no-js"> 
+<!--[if gt IE 8]><!-->
+<html class="no-js">
 <!--<![endif]-->
     <head>
         <meta charset="utf-8">
@@ -12,7 +12,9 @@
         <meta name="description" content="Esse projeto foi gerado com slush-focusnetworks by Focusnetworks">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <% if (includeFoundation) { %>
+          <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <% } %>
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/fonts.css">
@@ -137,7 +139,7 @@
 
                 <div class="row service">
                   <h2>Lorem Ipsum</h2>
-                  
+
                   <ul>
                     <li><i class="fa fa-check-circle"></i>Nunc varius, lacus in lobortis semper</li>
                     <li><i class="fa fa-check-circle"></i>Nunc varius, lacus in lobortis semper</li>
@@ -147,7 +149,7 @@
 
                 <div class="row service">
                   <h2>Lorem Ipsum</h2>
-                  
+
                   <ul>
                     <li><i class="fa fa-check-circle"></i>Nunc varius, lacus in lobortis semper</li>
                   </ul>
@@ -155,7 +157,7 @@
 
                 <div class="row service">
                   <h2>Lorem Ipsum</h2>
-                  
+
                   <ul>
                     <li><i class="fa fa-check-circle"></i>Nunc varius, lacus in lobortis semper</li>
                     <li><i class="fa fa-check-circle"></i>Nunc varius, lacus in lobortis semper</li>
@@ -165,7 +167,7 @@
 
                 <div class="row service">
                   <h2>Lorem Ipsum</h2>
-                  
+
                   <a href="mailto:danilo.vaz@focusnetworks.com.br" class="btn-entre-contato"><i class="fa fa-arrow-circle-right"></i>Entre em contato</a>
                 </div>
             </div>
@@ -176,7 +178,7 @@
 
             <div class="row service">
               <h2>Lorem Ipsum</h2>
-              
+
               <ul>
                 <li><i class="fa fa-check-circle"></i>Nunc varius, lacus in lobortis semper</li>
                 <li><i class="fa fa-check-circle"></i>Nunc varius, lacus in lobortis semper</li>
@@ -186,7 +188,7 @@
 
             <div class="row service">
               <h2>Lorem Ipsum</h2>
-              
+
               <ul>
                 <li><i class="fa fa-check-circle"></i>Nunc varius, lacus in lobortis semper</li>
               </ul>
@@ -194,7 +196,7 @@
 
             <div class="row service">
               <h2>Lorem Ipsum</h2>
-              
+
               <ul>
                 <li><i class="fa fa-check-circle"></i>Nunc varius, lacus in lobortis semper</li>
                 <li><i class="fa fa-check-circle"></i>Nunc varius, lacus in lobortis semper</li>
@@ -204,7 +206,7 @@
 
             <div class="row service">
               <h2>Lorem Ipsum</h2>
-              
+
               <a href="mailto:danilo.vaz@focusnetworks.com.br" class="btn-entre-contato"><i class="fa fa-arrow-circle-right"></i>Entre em contato</a>
             </div>
 
@@ -273,6 +275,6 @@
     <script src="js/vendor/bootstrap.min.js"></script>
 
     <script src="js/main.js"></script>
-    
+
     </body>
 </html>
