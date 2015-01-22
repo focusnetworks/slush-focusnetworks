@@ -54,19 +54,48 @@ gulp.task('default', function (done) {
             default: 'HTML'
         },
         {
+          type: 'checkbox',
+          name: 'frameworkCSS',
+          message: 'Gostaria de adicionar um Framework CSS?',
+          choices: [{
+            name: 'Foundation',
+            value: 'includeFoundation',
+            checked: true
+          }, {
+            name: 'Bootstrap',
+            value: 'includeBootstrap',
+            checked: true
+          }]
+        },
+        {
             type: 'confirm',
             name: 'moveon',
             message: 'Gerar scaffolding?'
         }
     ],
     function (answers) {
+        var frameworkCSS = answers.frameworkCSS,
+        hasFrameworkCSS = function (feat) {
+          return frameworkCSS.indexOf(feat) !== -1;
+        };
         answers.appNameSlug = _.slugify(answers.appName);
+
         if (!answers.moveon) {
             return done();
         }
+
+        answers.includeFoundation = hasFrameworkCSS('includeFoundation');
+        answers.includeBootstrap = hasFrameworkCSS('includeBootstrap');
+
+        var pattern = [__dirname + '/templates/' + answers.typeProject + '/**',  '!' + __dirname + '/templates/' + answers.typeProject + '/{scss,scss/**}'];
+
+        if (answers.includeSass) {
+          pattern = [__dirname + '/templates/' + answers.typeProject + '/**', '!' + __dirname + '/templates' + answers.typeProject +  '/{css,css/**}'];
+        }
+
         if (answers.typeProject == 'HTML') {
             console.log("HTML");
-            gulp.src(__dirname + '/templates/html/**')
+            gulp.src(pattern)
                 .pipe(template(answers))
                 .pipe(rename(function(file) {
                     if (file.basename[0] === '_') {
