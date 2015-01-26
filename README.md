@@ -1,4 +1,4 @@
-# slush-focusnetworks [![Build Status](https://secure.travis-ci.org/focusnetworks/slush-focusnetworks.png?branch=master)](https://travis-ci.org/focusnetworks/slush-focusnetworks) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-focusnetworks.png)](http://badges.enytc.com/for/npm/slush-focusnetworks)
+# slush-focusnetworks [![Build Status](https://secure.travis-ci.org/focusnetworks/slush-focusnetworks.png?branch=master)](https://travis-ci.org/focusnetworks/slush-focusnetworks) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-focusnetworks.png)](http://badges.enytc.com/for/npm/slush-focusnetworks) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/focusnetworks/slush-focusnetworks/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 [![NPM](https://nodei.co/npm/slush-focusnetworks.png?downloads=true&stars=true)](https://nodei.co/npm/slush-focusnetworks/)
 
@@ -88,7 +88,3 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 =======
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/focusnetworks/slush-focusnetworks/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
