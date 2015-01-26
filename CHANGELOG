@@ -7,3 +7,8 @@ v0.1.1:
   date: 2015-1-25
   changes:
     - Include CakePHP Scaffolding.
+
+v0.1.2:
+  date: 2015-1-25
+  changes:
+    - Include FrameworkCSS option.

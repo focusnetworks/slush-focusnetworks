@@ -60,11 +60,11 @@ gulp.task('default', function (done) {
           choices: [{
             name: 'Foundation',
             value: 'includeFoundation',
-            checked: true
+            checked: false
           }, {
             name: 'Bootstrap',
             value: 'includeBootstrap',
-            checked: true
+            checked: false
           }]
         },
         {
@@ -85,12 +85,16 @@ gulp.task('default', function (done) {
         }
 
         answers.includeFoundation = hasFrameworkCSS('includeFoundation');
-        answers.includeBootstrap = hasFrameworkCSS('includeBootstrap');
+        answers.includeBootstrap  = hasFrameworkCSS('includeBootstrap');
 
-        var pattern = [__dirname + '/templates/' + answers.typeProject + '/**',  '!' + __dirname + '/templates/' + answers.typeProject + '/{scss,scss/**}'];
+        var pattern = [__dirname + '/templates/' + answers.typeProject + '/**',  '!' + __dirname + '/templates/' + answers.typeProject + '/{css,css/**}'];
 
-        if (answers.includeSass) {
-          pattern = [__dirname + '/templates/' + answers.typeProject + '/**', '!' + __dirname + '/templates' + answers.typeProject +  '/{css,css/**}'];
+        if (answers.includeBootstrap) {
+          pattern = [__dirname + '/templates/' + answers.typeProject + '/**', '!' + __dirname + '/templates/' + answers.typeProject +  '/{css,css/vendor/bootstrap/**}'];
+        }
+
+        if (answers.includeFoundation) {
+          pattern = [__dirname + '/templates/' + answers.typeProject + '/**', '!' + __dirname + '/templates/' + answers.typeProject +  '/{css,css/vendor/foundation/**}'];
         }
 
         if (answers.typeProject == 'HTML') {

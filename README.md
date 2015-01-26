@@ -1,10 +1,17 @@
 # slush-focusnetworks [![Build Status](https://secure.travis-ci.org/focusnetworks/slush-focusnetworks.png?branch=master)](https://travis-ci.org/focusnetworks/slush-focusnetworks) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-focusnetworks.png)](http://badges.enytc.com/for/npm/slush-focusnetworks)
 
+[![NPM](https://nodei.co/npm/slush-focusnetworks.png?downloads=true&stars=true)](https://nodei.co/npm/slush-focusnetworks/)
+
 > A slush generator to scaffold webpage projects Focusnetworks
 
-## Dependencies 
+## Dependencies
 You need install [NPM](http://www.npmjs.com/), [Gulp](http://gulpjs.com/) and [Slush](http://slushjs.github.io/#/)
 
+## Generators
+* HTML
+* HTML w/ Bootstrap
+* HTML w/ Foundation
+* CakePHP w/ brownie
 
 ## Getting Started
 
@@ -43,7 +50,17 @@ See the [CONTRIBUTING Guidelines](https://github.com/focusnetworks/slush-focusne
 ## Support
 If you have any problem or suggestion please open an issue [here](https://github.com/focusnetworks/slush-focusnetworks/issues).
 
-## License 
+## TODOS
+
+- [x] add HTML scaffolding
+- [x] add CakePHP scaffolding
+- [ ] add Rails scaffolding
+- [ ] add AngularJS scaffolding
+- [ ] add MEAN scaffolding
+- [ ] add Meteor scaffolding
+- [ ] add Java scaffolding
+
+## License
 
 The MIT License
 
