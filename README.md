@@ -55,6 +55,7 @@ If you have any problem or suggestion please open an issue [here](https://github
 - [x] add HTML scaffolding
 - [x] add CakePHP scaffolding
 - [ ] add Rails scaffolding
+- [ ] add Rails scaffolding with [my_admin](https://github.com/marcosvgs/my_admin)
 - [ ] add AngularJS scaffolding
 - [ ] add MEAN scaffolding
 - [ ] add Meteor scaffolding
