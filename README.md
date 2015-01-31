@@ -87,4 +87,6 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-=======
+---
+
+Made with :heart: at [Focusnetworks](http://focusnetworks.com.br) by [Danilo Vaz](https://github.com/danilovaz)
