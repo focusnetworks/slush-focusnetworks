@@ -14,7 +14,8 @@ var gulp        = require('gulp'),
     template    = require('gulp-template'),
     rename      = require('gulp-rename'),
     _           = require('underscore.string'),
-    inquirer    = require('inquirer');
+    inquirer    = require('inquirer'),
+    run         = require('gulp-run');
 
 function format(string) {
     var username = string.toLowerCase();
@@ -119,7 +120,7 @@ gulp.task('default', function (done) {
 
         if (answers.docYes) {
             run('npm install frontend-md').exec()  // prints "Hello World\n".
-            .pipe(gulp.dest('output'));   // Writes "Hello World\n" to output/echo.          
+            .pipe(gulp.dest('output'));   // Writes "Hello World\n" to output/echo.
         }
 
         if (answers.typeProject == 'HTML') {
