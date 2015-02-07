@@ -1,7 +1,7 @@
 {
   "name": "slush-focusnetworks",
   "description": "A slush generator to scaffold Focusnetworks projects",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "https://github.com/focusnetworks/slush-focusnetworks",
   "author": {
       "name": "Danilo Vaz",
