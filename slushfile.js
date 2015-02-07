@@ -44,20 +44,20 @@ gulp.task('default', function (done) {
         {
             type: 'input',
             name: 'appName',
-            message: 'Qual o nome do projeto?',
+            message: "What's the name of your project?",
             default: defaults.appName
         },
         {
             type: 'list',
             name: 'typeProject',
-            message: 'Qual linguagem?',
+            message: 'What do you want to use?',
             choices: ['HTML', 'Rails', 'cakePHP', 'MEAN', 'AngularJS'],
             default: 'HTML'
         },
         {
           type: 'checkbox',
           name: 'frameworkCSS',
-          message: 'Gostaria de adicionar um Framework CSS?',
+          message: 'Do you want to include Framework CSS?',
           choices: [{
             name: 'Foundation',
             value: 'includeFoundation',
@@ -71,7 +71,7 @@ gulp.task('default', function (done) {
         {
           type: 'checkbox',
           name: 'generateDoc',
-          message: 'Gostaria de gerar um FRONTEND.md?',
+          message: 'Do you want to include FRONTEND.md?',
           choices: [{
             name: 'Yes',
             value: 'docYes',
@@ -85,7 +85,7 @@ gulp.task('default', function (done) {
         {
             type: 'confirm',
             name: 'moveon',
-            message: 'Gerar scaffolding?'
+            message: "Ok, let's go?"
         }
     ],
     function (answers) {
