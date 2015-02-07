@@ -1,13 +1,11 @@
 {
   "name": "<%= appNameSlug %>",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "devDependencies": {
     "gulp-connect": "^2.0.6",
     "gulp": "^3.8.6",
     "frontend-md": "^0.0.3"
-  }
-},
-{
+  },
   "frontend": {
     "name": "<%= typeProject %>",
     "stylesheets": "css",
