@@ -90,7 +90,7 @@ gulp.task('default', function (done) {
     ],
     function (answers) {
         var frameworkCSS  = answers.frameworkCSS,
-            documentFront = answers.generateDoc,
+            generateDoc   = answers.generateDoc,
         hasFrameworkCSS = function (feat) {
           return frameworkCSS.indexOf(feat) !== -1;
         },
@@ -106,7 +106,7 @@ gulp.task('default', function (done) {
         answers.includeFoundation = hasFrameworkCSS('includeFoundation');
         answers.includeBootstrap  = hasFrameworkCSS('includeBootstrap');
         answers.docYes            = hasDoc('docYes');
-        answers.docNo            = hasDoc('docNo');
+        answers.docNo             = hasDoc('docNo');
 
         var pattern = [__dirname + '/templates/' + answers.typeProject + '/**',  '!' + __dirname + '/templates/' + answers.typeProject + '/{css,css/**}'];
 
@@ -119,12 +119,12 @@ gulp.task('default', function (done) {
         }
 
         if (answers.docYes) {
+            console.log("generating front ...");
             run('npm install frontend-md').exec()  // prints "Hello World\n".
             .pipe(gulp.dest('output'));   // Writes "Hello World\n" to output/echo.
         }
 
         if (answers.typeProject == 'HTML') {
-            console.log("HTML");
             gulp.src(pattern)
                 .pipe(template(answers))
                 .pipe(rename(function(file) {
