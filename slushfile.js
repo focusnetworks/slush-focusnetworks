@@ -2,7 +2,7 @@
  * slush-focusnetworks
  * https://github.com/focusnetworks/slush-focusnetworks
  *
- * Copyright (c) 2014, Focusnetworks
+ * Copyright (c) 2015, Focusnetworks
  * Licensed under the MIT license.
  */
 
@@ -68,15 +68,33 @@ gulp.task('default', function (done) {
           }]
         },
         {
+          type: 'checkbox',
+          name: 'generateDoc',
+          message: 'Gostaria de gerar um FRONTEND.md?',
+          choices: [{
+            name: 'Yes',
+            value: 'docYes',
+            checked: false
+          }, {
+            name: 'No',
+            value: 'docNo',
+            checked: false
+          }]
+        },
+        {
             type: 'confirm',
             name: 'moveon',
             message: 'Gerar scaffolding?'
         }
     ],
     function (answers) {
-        var frameworkCSS = answers.frameworkCSS,
+        var frameworkCSS  = answers.frameworkCSS,
+            documentFront = answers.generateDoc,
         hasFrameworkCSS = function (feat) {
           return frameworkCSS.indexOf(feat) !== -1;
+        },
+        hasDoc = function (feat) {
+          return generateDoc.indexOf(feat) !== -1;
         };
         answers.appNameSlug = _.slugify(answers.appName);
 
@@ -86,6 +104,8 @@ gulp.task('default', function (done) {
 
         answers.includeFoundation = hasFrameworkCSS('includeFoundation');
         answers.includeBootstrap  = hasFrameworkCSS('includeBootstrap');
+        answers.docYes            = hasDoc('docYes');
+        answers.docNo            = hasDoc('docNo');
 
         var pattern = [__dirname + '/templates/' + answers.typeProject + '/**',  '!' + __dirname + '/templates/' + answers.typeProject + '/{css,css/**}'];
 
@@ -95,6 +115,11 @@ gulp.task('default', function (done) {
 
         if (answers.includeFoundation) {
           pattern = [__dirname + '/templates/' + answers.typeProject + '/**', '!' + __dirname + '/templates/' + answers.typeProject +  '/{css,css/vendor/foundation/**}'];
+        }
+
+        if (answers.docYes) {
+            run('npm install frontend-md').exec()  // prints "Hello World\n".
+            .pipe(gulp.dest('output'));   // Writes "Hello World\n" to output/echo.          
         }
 
         if (answers.typeProject == 'HTML') {

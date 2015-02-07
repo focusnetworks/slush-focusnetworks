@@ -1,14 +1,19 @@
-v0.1.0:
+v0.0.1:
   date: 2015-1-20
   changes:
     - Initial release.
 
-v0.1.1:
+v0.0.2:
   date: 2015-1-25
   changes:
     - Include CakePHP Scaffolding.
 
-v0.1.2:
+v0.0.3:
   date: 2015-1-25
   changes:
     - Include FrameworkCSS option.
+
+v0.0.4:
+  date: 2015-2-07
+  changes:
+    - Include Frontend-md generator.
