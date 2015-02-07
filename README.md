@@ -32,7 +32,7 @@ $ mkdir my-project
 Run the generator from within the new folder:
 
 ```bash
-$ cd my-slush-reloader && slush focusnetworks
+$ cd my-project && slush focusnetworks
 ```
 
 ## Getting To Know Slush
@@ -52,6 +52,8 @@ If you have any problem or suggestion please open an issue [here](https://github
 
 ## TODOS
 
+- [x] add Bootstrap
+- [x] add Foundation
 - [x] add HTML scaffolding
 - [x] add CakePHP scaffolding
 - [ ] add Rails scaffolding
