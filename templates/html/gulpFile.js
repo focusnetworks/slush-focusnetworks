@@ -1,6 +1,6 @@
-var gulp    = require('gulp'),
-    connect = require('gulp-connect'),
-    run     = require('gulp-run');
+var gulp      = require('gulp'),
+    connect   = require('gulp-connect'),
+    shell     = require('gulp-shell');
 
 gulp.task('connect', function() {
   connect.server({
@@ -18,10 +18,8 @@ gulp.task('watch', function () {
   gulp.watch(['*.html','css/**', 'js/**'], ['html']);
 });
 
-gulp.task('front-doc', function () {
-  run('frontend-md').exec()  // prints "Hello World\n".
-  .pipe(gulp.dest('output'))    // Writes "Hello World\n" to output/echo.
-})
-
+gulp.task('front-doc', shell.task([
+  'frontend-md'
+]));
 
 gulp.task('default', ['front-doc', 'connect', 'watch']);

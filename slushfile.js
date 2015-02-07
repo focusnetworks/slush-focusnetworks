@@ -13,9 +13,9 @@ var gulp        = require('gulp'),
     conflict    = require('gulp-conflict'),
     template    = require('gulp-template'),
     rename      = require('gulp-rename'),
+    shell       = require('gulp-shell'),
     _           = require('underscore.string'),
-    inquirer    = require('inquirer'),
-    run         = require('gulp-run');
+    inquirer    = require('inquirer');
 
 function format(string) {
     var username = string.toLowerCase();
@@ -28,9 +28,11 @@ var defaults = (function() {
         osUserName      = homeDir && homeDir.split('/').pop() || 'root',
         configFile      = homeDir + '/.gitconfig',
         user            = {};
+
     if (require('fs').existsSync(configFile)) {
         user = require('iniparser').parseSync(configFile).user;
     }
+
     return {
         appName: workingDirName,
         userName: format(user.name) || osUserName,
@@ -51,7 +53,8 @@ gulp.task('default', function (done) {
             type: 'list',
             name: 'typeProject',
             message: 'What do you want to use?',
-            choices: ['HTML', 'Rails', 'cakePHP', 'MEAN', 'AngularJS'],
+            //choices: ['HTML', 'Rails', 'cakePHP', 'MEAN', 'AngularJS'],
+            choices: ['HTML', 'cakePHP'],
             default: 'HTML'
         },
         {
@@ -97,6 +100,7 @@ gulp.task('default', function (done) {
         hasDoc = function (feat) {
           return generateDoc.indexOf(feat) !== -1;
         };
+
         answers.appNameSlug = _.slugify(answers.appName);
 
         if (!answers.moveon) {
@@ -119,9 +123,10 @@ gulp.task('default', function (done) {
         }
 
         if (answers.docYes) {
-            console.log("generating front ...");
-            run('npm install frontend-md').exec()  // prints "Hello World\n".
-            .pipe(gulp.dest('output'));   // Writes "Hello World\n" to output/echo.
+            shell.task([
+              'npm install frontend-md',
+              'frontend-md'
+            ]);
         }
 
         if (answers.typeProject == 'HTML') {
