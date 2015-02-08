@@ -11,6 +11,7 @@ You need install [NPM](http://www.npmjs.com/), [Gulp](http://gulpjs.com/) and [S
 * HTML
 * HTML w/ Bootstrap
 * HTML w/ Foundation
+* Rails
 * CakePHP w/ brownie
 
 ## Getting Started
@@ -56,7 +57,7 @@ If you have any problem or suggestion please open an issue [here](https://github
 - [x] add Foundation
 - [x] add HTML scaffolding
 - [x] add CakePHP scaffolding
-- [ ] add Rails scaffolding
+- [x] add Rails scaffolding
 - [ ] add Rails scaffolding with [my_admin](https://github.com/marcosvgs/my_admin)
 - [ ] add AngularJS scaffolding
 - [ ] add MEAN scaffolding
