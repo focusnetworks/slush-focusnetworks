@@ -86,20 +86,38 @@ gulp.task('default', function (done) {
           }]
         },
         {
+          type: 'checkbox',
+          name: 'generateIgnore',
+          message: 'Do you want to include .gitignore?',
+          choices: [{
+            name: 'Yes',
+            value: 'ignoreYes',
+            checked: false
+          }, {
+            name: 'No',
+            value: 'ignoreNo',
+            checked: false
+          }]
+        },
+        {
             type: 'confirm',
             name: 'moveon',
             message: "Ok, let's go?"
         }
     ],
     function (answers) {
-        var frameworkCSS  = answers.frameworkCSS,
-            generateDoc   = answers.generateDoc,
+        var frameworkCSS    = answers.frameworkCSS,
+            generateDoc     = answers.generateDoc,
+            generateIgnore  = answers.generateIgnore,
         hasFrameworkCSS = function (feat) {
           return frameworkCSS.indexOf(feat) !== -1;
         },
         hasDoc = function (feat) {
           return generateDoc.indexOf(feat) !== -1;
-        };
+        },
+        hasIgnore = function (feat) {
+          return generateIgnore.indexOf(feat) !== -1;
+        },;
 
         answers.appNameSlug = _.slugify(answers.appName);
 
@@ -107,10 +125,17 @@ gulp.task('default', function (done) {
             return done();
         }
 
+        //Framework CSS
         answers.includeFoundation = hasFrameworkCSS('includeFoundation');
         answers.includeBootstrap  = hasFrameworkCSS('includeBootstrap');
+
+        //Doc FRONTEND
         answers.docYes            = hasDoc('docYes');
         answers.docNo             = hasDoc('docNo');
+
+        //.gitignore
+        answers.ignoreYes         = hasIgnore('ignoreYes');
+        answers.ignoreNo          = hasIgnore('ignoreNo');
 
         var pattern = [__dirname + '/templates/' + answers.typeProject + '/**',  '!' + __dirname + '/templates/' + answers.typeProject + '/{css,css/**}'];
 
@@ -127,6 +152,11 @@ gulp.task('default', function (done) {
               'npm install frontend-md',
               'frontend-md'
             ]);
+        }
+
+        if (answers.ignoreYes) {
+
+
         }
 
         if (answers.typeProject == 'HTML') {
