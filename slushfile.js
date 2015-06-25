@@ -46,8 +46,14 @@ gulp.task('default', function (done) {
         {
             type: 'input',
             name: 'appName',
-            message: "What's the name of your project?",
+            message: 'What is the name of your project?',
             default: defaults.appName
+        },
+        {
+            type: 'input',
+            name: 'appVersion',
+            message: 'What is the version of your project?',
+            default: '0.1.0'
         },
         {
             type: 'list',
@@ -68,6 +74,20 @@ gulp.task('default', function (done) {
           }, {
             name: 'Bootstrap',
             value: 'includeBootstrap',
+            checked: false
+          }]
+        },
+        {
+          type: 'checkbox',
+          name: 'includeFontAwesome',
+          message: 'Do you want to include Font Awesome?',
+          choices: [{
+            name: 'Yes',
+            value: 'awesomeYes',
+            checked: false
+          }, {
+            name: 'No',
+            value: 'awesomeNo',
             checked: false
           }]
         },
@@ -106,18 +126,22 @@ gulp.task('default', function (done) {
         }
     ],
     function (answers) {
-        var frameworkCSS    = answers.frameworkCSS,
-            generateDoc     = answers.generateDoc,
-            generateIgnore  = answers.generateIgnore,
+        var frameworkCSS        = answers.frameworkCSS,
+            generateDoc         = answers.generateDoc,
+            generateIgnore      = answers.generateIgnore,
+            includeFontAwesome  = answers.includeFontAwesome,
         hasFrameworkCSS = function (feat) {
           return frameworkCSS.indexOf(feat) !== -1;
         },
-        hasDoc = function (feat) {
+        hasDoc  = function (feat) {
           return generateDoc.indexOf(feat) !== -1;
         },
         hasIgnore = function (feat) {
           return generateIgnore.indexOf(feat) !== -1;
-        },;
+        },
+        hasAwesome  = function (feat) {
+          return includeFontAwesome.indexOf(feat) !== -1;
+        };
 
         answers.appNameSlug = _.slugify(answers.appName);
 
@@ -129,6 +153,10 @@ gulp.task('default', function (done) {
         answers.includeFoundation = hasFrameworkCSS('includeFoundation');
         answers.includeBootstrap  = hasFrameworkCSS('includeBootstrap');
 
+        //Font Awesome
+        answers.awesomeYes        = hasAwesome('awesomeYes');
+        answers.awesomeNo         = hasAwesome('awesomeNo');
+
         //Doc FRONTEND
         answers.docYes            = hasDoc('docYes');
         answers.docNo             = hasDoc('docNo');
@@ -137,15 +165,25 @@ gulp.task('default', function (done) {
         answers.ignoreYes         = hasIgnore('ignoreYes');
         answers.ignoreNo          = hasIgnore('ignoreNo');
 
-        var pattern = [__dirname + '/templates/' + answers.typeProject + '/**',  '!' + __dirname + '/templates/' + answers.typeProject + '/{css,css/**}'];
-
         if (answers.includeBootstrap) {
-          pattern = [__dirname + '/templates/' + answers.typeProject + '/**', '!' + __dirname + '/templates/' + answers.typeProject +  '/{css,css/vendor/bootstrap/**}'];
+          var pattern = [__dirname + '/templates/' + answers.typeProject + '/**', '!' + __dirname + '/templates/' + answers.typeProject +  '/{css,css/vendor/foundation/**}'];
         }
 
         if (answers.includeFoundation) {
-          pattern = [__dirname + '/templates/' + answers.typeProject + '/**', '!' + __dirname + '/templates/' + answers.typeProject +  '/{css,css/vendor/foundation/**}'];
+          var pattern = [__dirname + '/templates/' + answers.typeProject + '/**', '!' + __dirname + '/templates/' + answers.typeProject +  '/{css,css/vendor/bootstrap/**}'];
         }
+
+        if (answers.awesomeYes) {
+          var pattern = [__dirname + '/templates/' + answers.typeProject + '/**',  __dirname + '/templates/' + answers.typeProject +  '/{css,css/font-awesome.min.css}'];
+        }
+
+        // if (!(answers.includeBootstrap) && !(answers.includeFoundation)) {
+        //   var pattern = [__dirname + '/templates/' + answers.typeProject + '/**',  '!' + __dirname + '/templates/' + answers.typeProject + '/{css/vendor,css/vendor/**}'];
+        // }
+
+        console.log("CSS: " + answers.awesomeYes);
+
+        console.log("Padrao: " + pattern);
 
         if (answers.docYes) {
             shell.task([
